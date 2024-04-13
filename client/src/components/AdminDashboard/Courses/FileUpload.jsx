@@ -4,10 +4,10 @@ import './FileUpload.css'
 
 const FileUpload = ({ courseId }) => {
   const inputRef = useRef();
-
   const [selectedFile, setSelectedFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [uploadStatus, setUploadStatus] = useState("select");
+  const [name, setName] = useState(""); // Ajout du state pour le nom du fichier
 
   const handleFileChange = (event) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -27,15 +27,13 @@ const FileUpload = ({ courseId }) => {
   };
 
   const handleUpload = async () => {
-    if (uploadStatus === "done") {
-      clearFileInput();
-      return;
-    }
+    if (!selectedFile || !name) return; // Vérification que le fichier et le nom sont présents
 
     try {
       setUploadStatus("uploading");
       const formData = new FormData();
       formData.append("file", selectedFile);
+      formData.append("name", name); // Utilisation du nom du fichier
 
       const response = await axios.post(
         `http://localhost:3000/api/courses/upload/${courseId}`,
@@ -52,6 +50,7 @@ const FileUpload = ({ courseId }) => {
 
       setUploadStatus("done");
     } catch (error) {
+      console.error("Error uploading file:", error);
       setUploadStatus("select");
     }
   };
@@ -84,7 +83,7 @@ const FileUpload = ({ courseId }) => {
               </div>
               {uploadStatus === "select" ? (
                 <button onClick={clearFileInput}>
-                  <span class="material-symbols-outlined close-icon">close</span>
+                  <span className="material-symbols-outlined close-icon">close</span>
                 </button>
               ) : (
                 <div className="check-circle">
@@ -97,6 +96,12 @@ const FileUpload = ({ courseId }) => {
               )}
             </div>
           </div>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)} // Gérer le changement du nom
+            placeholder="Enter file name" // Changer en "Enter file name"
+          />
           <button className="upload-btn" onClick={handleUpload}>
             {uploadStatus === "select" || uploadStatus === 'uploading' ? "Upload" : "Done"}
           </button>

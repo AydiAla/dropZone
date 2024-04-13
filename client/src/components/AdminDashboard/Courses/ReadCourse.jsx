@@ -17,10 +17,12 @@ function ReadCourse() {
   const { courseId } = useParams();
   const [allImage, setAllImage] = useState("");
   const [pdfFile, setPdfFile] = useState("");
+  const [moduleName, setModuleName] = useState("");
+  const [modules, setModules] = useState([]);
 
   useEffect(() => {
     getPdf();
-  }, [courseId, allImage])
+  }, [courseId, allImage]);
 
   const showPdf = (file) => {
     const absoluteFilePath = `http://localhost:3000/api/courses/get-files/${file}`;
@@ -48,7 +50,7 @@ function ReadCourse() {
         });
       });
     });
-  }
+  };
 
   const getPdf = async () => {
     try {
@@ -57,7 +59,7 @@ function ReadCourse() {
     } catch (error) {
       console.error("Error fetching PDF files:", error);
     }
-  }
+  };
 
   const onDrop = (acceptedFiles) => {
     setFile(acceptedFiles[0]);
@@ -86,6 +88,15 @@ function ReadCourse() {
     }
   };
 
+  const handleAddModule = (e) => {
+    e.preventDefault();
+    if (moduleName.trim() !== "") {
+      const newModule = { id: modules.length + 1, name: moduleName.trim() };
+      setModules([...modules, newModule]);
+      setModuleName("");
+    }
+  };
+
   return (
     <div className="App">
       <form className="formStyle" onSubmit={submitImage}>
@@ -106,6 +117,15 @@ function ReadCourse() {
         <button className="btn btn-primary" type="submit">
           Submit
         </button>
+      </form>
+      <form onSubmit={handleAddModule}>
+        <input
+          type="text"
+          value={moduleName}
+          onChange={(e) => setModuleName(e.target.value)}
+          placeholder="Enter module name"
+        />
+        <button type="submit">Add Module</button>
       </form>
       <div className="uploaded">
         <h4>Uploaded PDF:</h4>
@@ -135,6 +155,9 @@ function ReadCourse() {
         </div>
       </div>
       {pdfFile && <PdfComp file={pdfFile} />}
+      {modules.map((module) => (
+        <CustomAccordion key={module.id} title={module.name} moduleId={courseId} />
+      ))}
     </div>
   );
 }

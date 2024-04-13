@@ -1,0 +1,202 @@
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "WebInspector",
+      "version": "537.36"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2024-04-05T00:05:13.110Z",
+        "id": "page_1",
+        "title": "http://localhost:3000/api/courses/get-filesfiles/file-1712174953306-354983124",
+        "pageTimings": {
+          "onContentLoad": 46.4499999943655,
+          "onLoad": 79.24500000081025
+        }
+      }
+    ],
+    "entries": [
+      {
+        "_initiator": {
+          "type": "other"
+        },
+        "_priority": "VeryHigh",
+        "_resourceType": "document",
+        "cache": {},
+        "connection": "110776",
+        "pageref": "page_1",
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/courses/get-filesfiles/file-1712174953306-354983124",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br, zstd"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "fr-FR,fr;q=0.9,en;q=0.8,en-US;q=0.7"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Cookie",
+              "value": "username-localhost-8888=\"2|1:0|10:1711039360|23:username-localhost-8888|44:Y2NmMzcxMjU4YzFmNGFmNzg5NjJhYWE5ZTU3ODE3YTY=|bf8fe49ae950a72b824971fa907c28bbcf933b6ce02c23bb798bb62d5ac2434f\"; _xsrf=2|24481412|f0f1ae7a6f7cbd57f297f1376689c049|1711039360"
+            },
+            {
+              "name": "Host",
+              "value": "localhost:3000"
+            },
+            {
+              "name": "Referer",
+              "value": "http://localhost:5173/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "document"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "navigate"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Sec-Fetch-User",
+              "value": "?1"
+            },
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            }
+          ],
+          "queryString": [],
+          "cookies": [
+            {
+              "name": "username-localhost-8888",
+              "value": "\"2|1:0|10:1711039360|23:username-localhost-8888|44:Y2NmMzcxMjU4YzFmNGFmNzg5NjJhYWE5ZTU3ODE3YTY=|bf8fe49ae950a72b824971fa907c28bbcf933b6ce02c23bb798bb62d5ac2434f\"",
+              "path": "/",
+              "domain": "localhost",
+              "expires": "2024-04-20T16:42:40.885Z",
+              "httpOnly": true,
+              "secure": false
+            },
+            {
+              "name": "_xsrf",
+              "value": "2|24481412|f0f1ae7a6f7cbd57f297f1376689c049|1711039360",
+              "path": "/",
+              "domain": "localhost",
+              "expires": "2024-04-20T16:42:40.885Z",
+              "httpOnly": false,
+              "secure": false
+            }
+          ],
+          "headersSize": 1058,
+          "bodySize": 0
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "httpVersion": "HTTP/1.1",
+          "headers": [
+            {
+              "name": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Content-Length",
+              "value": "194"
+            },
+            {
+              "name": "Content-Security-Policy",
+              "value": "default-src 'none'"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=utf-8"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 05 Apr 2024 00:05:13 GMT"
+            },
+            {
+              "name": "Keep-Alive",
+              "value": "timeout=5"
+            },
+            {
+              "name": "Vary",
+              "value": "Origin"
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "name": "X-Powered-By",
+              "value": "Express"
+            }
+          ],
+          "cookies": [],
+          "content": {
+            "size": 194,
+            "mimeType": "text/html",
+            "compression": 0,
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/courses/get-filesfiles/file-1712174953306-354983124</pre>\n</body>\n</html>\n"
+          },
+          "redirectURL": "",
+          "headersSize": 338,
+          "bodySize": 194,
+          "_transferSize": 532,
+          "_error": null
+        },
+        "serverIPAddress": "[::1]",
+        "startedDateTime": "2024-04-05T00:05:13.107Z",
+        "time": 7.267999997818842,
+        "timings": {
+          "blocked": 4.347999979743734,
+          "dns": 0.010000000000000009,
+          "ssl": -1,
+          "connect": 0.29899999999999993,
+          "send": 0.19300000000000006,
+          "wait": 1.9080000054929405,
+          "receive": 0.510000012582168,
+          "_blocked_queueing": 3.249999979743734
+        }
+      }
+    ]
+  }
+}
